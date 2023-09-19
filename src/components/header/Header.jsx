@@ -23,7 +23,7 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2 }}
         >
-          Can Surer
+          Seyedafshin Ghiasi
         </motion.h2>
         <motion.h5
           className="text-light"
@@ -31,7 +31,7 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2 }}
         >
-          Frontend Developer
+          Product Manager
         </motion.h5>
 
         <CTA />
