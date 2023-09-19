@@ -14,14 +14,14 @@ const Header = () => {
         <motion.h5
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         >
           Hello I'm
         </motion.h5>
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         >
           Seyedafshin Ghiasi
         </motion.h2>
@@ -29,7 +29,7 @@ const Header = () => {
           className="text-light"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         >
           Product Manager
         </motion.h5>
@@ -42,7 +42,7 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 4 }}
+            transition={{ duration: 2 }}
           >
             <AnimationReact />
           </motion.div>

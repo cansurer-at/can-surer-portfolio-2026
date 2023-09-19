@@ -40,19 +40,16 @@ header {
 
 /* ======== ME  ======== */
 .me {
-  margin-top: 20rem;
 
 }
 
 @media screen and (min-height: 1020px) { 
   .me {
-    margin-top: 10rem;
   }
 
 }
 @media screen and (max-height: 1200px) { 
   .me {
-    margin-top: 10rem;
   }
 
 }
@@ -88,7 +85,6 @@ header {
     display: none;
   }
   .me {
-    margin-top: 8rem;
   
   }
 }
