@@ -4,16 +4,37 @@
   gap: 2rem;
 }
 
+.ant-btn-primary {
+  color: white;
+  background-color: black;
+      border-color: white !important;
+
+  &:hover {
+    background-color: black !important;
+   
+    border-color: white !important;
+     border: 2px solid transparent;
+  }
+}
+.button-container{ 
+  display: flex;
+  justify-content: flex-end;
+
+}
 .experience__container > div {
-  background: var(--color-bg-variant);
   padding: 2.4rem 5rem;
   border-radius: 2rem;
   border: 1px solid transparent;
   transition: var(--transition);
+        border-color: white !important;
+
+  
+
 }
 
 .experience__container > div:hover {
   background: transparent;
+  border: 2px solid transparent;
   border-color: var(--color-primary-variant);
   cursor: default;
 }

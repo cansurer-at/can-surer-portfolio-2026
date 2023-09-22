@@ -4,18 +4,25 @@
   gap: 3rem;
 }
 
+.services__container-new {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+  margin: 5rem 15rem ;
+}
+
+
 
 .service {
-  background: var(--color-bg-variant);
   border-radius: 0 0 2rem 2rem;
-  border: 1px solid var(--color-primary);
+  border: 1px solid white;
   height: fit-content;
   transition: var(--transition);
 }
 .service:hover {
   background: transparent;
-  border-color: var(--color-primary-variant);
   cursor: default;
+  border: 3px solid  !important;
 }
 .service__head {
   background: var(--color-primary);
@@ -24,6 +31,37 @@
   box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
 }
 
+.service-new {
+  border-radius: 0 0 2rem 2rem;
+  border: 1px solid white;
+  height: fit-content;
+  transition: var(--transition);
+}
+.service-new:hover {
+  background: transparent;
+  cursor: default;
+  border: 3px solid  !important;
+}
+.service__head-new {
+  background: var(--color-primary);
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.triple-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+
+
+.service__head-new h3 {
+  color: var(--color-bg);
+  font-size: 1rem;
+  text-align: center;
+}
 .service__head h3 {
   color: var(--color-bg);
   font-size: 1rem;
@@ -52,17 +90,69 @@
   .services__container {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    
+  }
+
+  .services__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    
+    
+  }
+  .triple-items{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  
   }
 
   .service {
     height: auto;
   }
+
+  .triple-items{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: start;
+  
+  }
+  .services__container-new {
+  gap:1rem;
+    margin: 5rem 6rem;
+    justify-content: start;
+  
+    
+  }
+  
 }
 
 /* ================ MEDIA QUERIES (SMALL DEVICES) ================= */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+
   .services__container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
+
+  .service:hover {
+    background: transparent;
+    cursor: default;
+    border: 1px solid  !important;
+  }
+
+  .services__container-new {
+    gap: 1rem;
+    margin: 5rem 3rem;
+ 
+
+  }
+
+  .triple-items{
+    display: grid;
+    align-items: flex-start; 
+    padding: 0 10px;
+  }
+
+  
+  
 }

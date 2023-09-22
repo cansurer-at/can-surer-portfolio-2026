@@ -1,0 +1,31 @@
+.card-container { 
+  display: flex;
+  flex: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.image-wrapper { 
+
+}
+
+.image-itself{
+  border-radius: 100%;
+width: 110px;
+height: 110px;
+
+
+
+}
+
+.text-wrapper {
+  margin-left: 10px;
+
+}
+
+.date-wrapper {
+  display: flex;
+  flex-direction: rows;
+}

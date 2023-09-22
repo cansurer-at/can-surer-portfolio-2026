@@ -1,316 +1,261 @@
-
-
-
-import React from 'react'
-import './experience.css'
-import { BsPatchCheckFill } from 'react-icons/bs'
+import React, { useState } from "react";
+import "./experience.css";
+import { BsPatchCheckFill } from "react-icons/bs";
+import { Button } from "antd";
 
 const Experience = () => {
+  const [ShowMoreTools, setShowMoreTools] =
+    useState(false);
+    const [ShowMoreProjectManagement, setShowMoreProjectManagement] =
+    useState(false);
+  const [loadings, setLoadings] = useState([]);
+  const [loadings2, setLoadings2] = useState([]);
+
+  const enterLoading = (index) => {
+    setLoadings((prevLoadings) => {
+      const newLoadings = [...prevLoadings];
+      newLoadings[index] = true;
+      return newLoadings;
+    });
+
+    setTimeout(() => {
+      setLoadings((prevLoadings) => {
+        const newLoadings = [...prevLoadings];
+        newLoadings[index] = false;
+        return newLoadings;
+      });
+    }, 500);
+  };
+
+  const enterLoading2 = (index) => {
+    setLoadings2((prevLoadings) => {
+      const newLoadings2 = [...prevLoadings];
+      newLoadings2[index] = true;
+      return newLoadings2;
+    });
+
+    setTimeout(() => {
+      setLoadings2((prevLoadings) => {
+        const newLoadings2 = [...prevLoadings];
+        newLoadings2[index] = false;
+        return newLoadings2;
+      });
+    }, 500);
+  };
+
   return (
-    <section id='experience'>
+    <section id="experience">
       <h5>What Skills I Have</h5>
-      <h2>My Experience</h2>
+      <h2>My Skills</h2>
 
       <div className="container experience__container">
         <div className="experience__frontend">
           <h3>Project Management</h3>
           <div className="experience__content">
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>HTML</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>CSS</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>JavaScript</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>React</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>TypeScript</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
                 <h4>Next JS</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Tailwind CSS</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Bootstrap</h4>
-                <small className='text-light'>Intermediate</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Material UI</h4>
-                <small className='text-light'>Experienced</small>
               </div>
             </article>
 
+            {ShowMoreProjectManagement && (
+              <>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Tailwind CSS</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Bootstrap</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Material UI</h4>
+                  </div>
+                </article>
 
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Cypress</h4>
-                <small className='text-light'>Experienced</small>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Cypress</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Jest</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Ant Design</h4>
+                  </div>
+                </article>
+              </>
+            )}
+            <div style={{ justifyContent: "center", display: "flex" }}>
+              <div className="button-container">
+                <Button
+                  className=".ant-btn-primary"
+                  type="primary"
+                  loading={loadings[0]}
+                  onClick={() => {
+                    enterLoading(0);
+                    setTimeout(() => {
+                      setShowMoreProjectManagement(!ShowMoreProjectManagement);
+                    }, 500);
+                  }}
+                >
+                  {ShowMoreProjectManagement ? "Show less" : "Show more"}
+                </Button>
               </div>
-
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Jest</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Ant Design</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-
+            </div>
           </div>
         </div>
-        
-        {/* END OF FRONTEND */}
 
-        <div className="experience__backend">
-          <h3>Agile Project Management</h3>
-          <div className="experience__content">
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Node JS</h4>
-                <small className='text-light'>Beginner</small>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>MongoDB</h4>
-                <small className='text-light'>Beginner</small>
-              </div>
-            </article>
-
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Express JS</h4>
-                <small className='text-light'>Beginner</small>
-              </div>
-            </article>
-
-          </div>
-        </div>
+        {/* END OF PROJECT MANAGEMENT */}
 
         <div className="experience__frontend">
           <h3>Management Tools & Technologies</h3>
           <div className="experience__content">
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Wordpress</h4>
+                <h4>HTML</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Firebase</h4>
+                <h4>CSS</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Postman</h4>
+                <h4>JavaScript</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Git</h4>
+                <h4>React</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Ubuntu</h4>
+                <h4>TypeScript</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
+            <article className="experience__details">
+              <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>macOS</h4>
+                <h4>Next JS</h4>
               </div>
             </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Windows</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Figma</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Zeplin</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Jira</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Docker</h4>
-              </div>
-            </article>
-        
-            
 
+            {ShowMoreTools && (
+              <>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Tailwind CSS</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Bootstrap</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Material UI</h4>
+                  </div>
+                </article>
+
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Cypress</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Jest</h4>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Ant Design</h4>
+                  </div>
+                </article>
+              </>
+            )}
+            <div style={{ justifyContent: "center", display: "flex" }}>
+              <div className="button-container">
+                <Button
+                  className=".ant-btn-primary"
+                  type="primary"
+                  loading={loadings2[0]}
+                  onClick={() => {
+                    enterLoading2(0);
+                    setTimeout(() => {
+                      setShowMoreTools(!ShowMoreTools);
+                    }, 500);
+                  }}
+                >
+                  {ShowMoreTools ? "Show less" : "Show more"}
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-        {/* END OF TOOLS */}
-
-
-        <div className="experience__frontend">
-          <h3>Technical Skills</h3>
-          <div className="experience__content">
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Redux Toolkit</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Redux Persist</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Framer Motion</h4>
-              </div>
-            </article>
-
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Slick Slider</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Jwt</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Swiper JS</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Animation</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>i18n</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Chart JS</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Zustand</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Hook Form</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Axios</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>Yup</h4>
-              </div>
-            </article>
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon' />
-              <div>
-                <h4>HCaptcha</h4>
-              </div>
-            </article>
-
-          </div>
-        </div>
-        {/* END OF NPM PACKETS */}
-
 
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;
