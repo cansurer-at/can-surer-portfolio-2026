@@ -2,12 +2,11 @@ import React from "react";
 import "./about.css";
 import ME from '../../assets/secondary.png'
 import { FaAward } from "react-icons/fa";
-import { FiUsers } from "react-icons/fi";
-import { VscFolderLibrary } from "react-icons/vsc";
+
 
 const About = () => {
   return (
-    <section id="about">
+    <section className="About-general" id="about">
       <h5 className="getToNowMargin">Get To Know</h5>
       <h2>About Me</h2>
 
@@ -22,46 +21,32 @@ const About = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>1+ Years working</small>
+              <small>5+ Years working </small>
             </article>
-            <article className="about__card">
-              <FiUsers className="about__icon" />
-              <h5>Clients</h5>
-              <small>4+ Worldwide</small>
-            </article>
-            <article className="about__card">
-              <VscFolderLibrary className="about__icon" />
-              <h5>Projects</h5>
-              <small>23+ Completed</small>
-            </article>
+           
+            
           </div>
 
           <p>
-            I would describe myself as someone who is dedicated and reliable,
-            someone who has an eye for detail.
+          A Project Manager, with a solid technical, design, and IT background (over 5 years of experience in project
+environment, as both project manager and assistant). 
             <br></br>
             <br></br>
             <span></span>
-            <span></span>I am able to solve complex logic or other tasks related
-            to the web development. I have a perfect understanding of how
-            JavaScript, HTML and CSS work. I have a lot of experience working
-            with up-to-date technologies especially React JS.
+            <span></span>Adept at handling multiple projects simultaneously with the
+highest degree of accuracy. Proficient with the major CAD software systems and adobe suite.
             <br></br>
             <br></br>
             <span></span>
-            <span></span>I have solid experience in converting Figma and PSD
-            files into HTML; CSS or React components as pixel-perfect. I enjoy
-            creating Landing pages for your start-up.
-            <br></br>
-            <br></br>
-            <span></span>
-            <span></span>
-            If you want to build a high-quality, fully responsive website please
-            check my portfolio below and contact me 7/24
+            <span></span>Passionate about
+functional programming, content management, and content creation. Equipped with excellent visual presentation
+           <div></div>
           </p>
+          <div className="lets-talk">
           <a href="#contact" className="btn btn-primary">
             Let's Talk
           </a>
+          </div>
         </div>
       </div>
     </section>

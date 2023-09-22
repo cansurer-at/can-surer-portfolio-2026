@@ -1,8 +1,11 @@
 import React from 'react'
 import './footer.css'
 import { BsLinkedin } from 'react-icons/bs';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
+
 import { BsFillArrowUpSquareFill } from 'react-icons/bs';
+
+import { AiOutlineYoutube } from "react-icons/ai";
+
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -21,14 +24,16 @@ const Footer = () => {
       </ul>
 
       <div className="footer__socialss">
-        <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/cansurer/"><BsLinkedin/></a>
-        <a  rel="noreferrer" target="_blank" href="https://github.com/cansurer-at"><FaGithub/></a>
-        <a  rel="noreferrer" target="_blank" href="https://twitter.com/cansurertech"><FaTwitter/></a>
+        <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/afshin-ghiasi/"><BsLinkedin/></a>
+        
+        <a href="https://www.youtube.com/@mesomeric2584" rel="noreferrer" target="_blank">
+        <AiOutlineYoutube />
+      </a>
        
       </div>
 
       <div className="footer__copyright">
-        <small>&copy; Can Surer. All rights reserved. {year}
+        <small>&copy; Seyedafshin Ghiasi. All rights reserved. {year}
         </small>
       </div>
     </footer>

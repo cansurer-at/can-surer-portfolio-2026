@@ -33,7 +33,7 @@ const PortfolioCompany = () => {
         <div className="container portfolio__container">
           <article className="portfolio__item">
             <div className="portfolio__item-image">
-              <img src={Avica} alt={"AVICA"} />
+              {/* <img src={Avica} alt={"AVICA"} /> */}
             </div>
             <h3>AVICA (Data-driven AI company) - Vienna </h3>
             <h5>

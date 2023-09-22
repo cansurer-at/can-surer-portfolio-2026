@@ -4,6 +4,9 @@
   gap: 15%;
 }
 
+.About-general{
+margin-top:22rem
+}
 .about__me {
   width: 100%;
   aspect-ratio: 1/1;
@@ -11,6 +14,7 @@
   background: linear-gradient(45deg, transparent, var(--color-primary));
   display: grid;
   place-items: center;
+  
 }
 
 .about__me-image {
@@ -83,9 +87,21 @@
     margin: 1rem 0 1.5rem;
   }
 }
+.about__cards {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+
+.lets-talk {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
 
 /*====== MEDIA QUERIES (SMALL DEVİCES) */
 @media screen and (max-width: 600px) {
+  
 
   .getToNowMargin {
     margin-top: -10rem;
@@ -96,7 +112,9 @@
   }
 
   .about__cards {
-    grid-template-columns: 1fr 1fr;
+  display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .about__content {
@@ -113,12 +131,14 @@
     margin-top: -10rem;
   }
 
+  
 }
 
 @media screen and (min-height: 815px) { 
   .getToNowMargin {
     margin-top: -22rem;
   }
+  
 
 }
 
@@ -126,6 +146,7 @@
   .getToNowMargin {
     margin-top: 0rem;
   }
+  
 
 }
 

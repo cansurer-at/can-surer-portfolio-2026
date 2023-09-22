@@ -13,10 +13,10 @@
 :root {
   --color-bg: black;
   --color-bg-variant: grey;
-  --color-primary: silver;
+  --color-primary: #fff;
   --color-primary-variant: silver;
   --color-white: #fff;
-  --color-light: rgba(255, 255, 255, 0.6);
+  --color-light: #ffffffd0;
 
   --transition: all 400ms ease;
 

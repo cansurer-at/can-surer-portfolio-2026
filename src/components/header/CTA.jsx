@@ -1,5 +1,5 @@
 import React from 'react'
-import CV from '../../assets/can-surer-cv3.pdf'
+import CV from '../../assets/Afshin_Portfolio-EN.pdf'
 import { motion } from "framer-motion"
 
 const CTA = () => {
@@ -7,7 +7,7 @@ const CTA = () => {
     <motion.div
     initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 4 }}
+    transition={{ duration: 1 }}
   >
     <div className='cta'>
       <a href={CV} download className="btn">Download CV</a>
