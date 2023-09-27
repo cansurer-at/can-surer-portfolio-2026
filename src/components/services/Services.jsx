@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { BsPatchCheckFill } from "react-icons/bs";
 import { Button } from "antd";
-
 import "./services.css";
-import { BiCheck } from "react-icons/bi";
 import UniCard from "../UniCard/UniCard";
 import IMG1 from "../../assets/uni-graz.png";
-
 import IMG2 from "../../assets/uni-mir.jpeg";
 import IMG3 from "../../assets/logo-ghatem.png";
 import IMG4 from "../../assets/PMI-logo.png";
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 const Services = () => {
+  const { t } = useTranslation(); // Use useTranslation hook to access translations
   const [ShowMorePMI, setShowMorePMI] = useState(false);
-
   const [loadings, setLoadings] = useState([]);
 
   const enterLoading = (index) => {
@@ -34,86 +31,90 @@ const Services = () => {
 
   return (
     <section id="services">
-      <h5>Get to Know</h5>
-      <h2>My Education Background</h2>
+      <h5>{t('getToKnow')}</h5>
+      <h2>{t('educationBackground')}</h2>
 
       <div className="container services__container">
         <article className="service">
           <div className="service__head">
-            <h3>Education</h3>
+            <h3>{t('education')}</h3>
           </div>
-          {/* Pass the imported image as a prop */}
           <UniCard
             imgSrc={IMG2}
-            title={"Mir Emad Institute of Higher Education"}
-            desc={"Associates Degree, Architecture"}
-            start={"Sep 2009"}
-            end={"Sep 2011"}
+            title={t('architectureDegree')}
+            desc={t('architectureDegreeDesc')}
+            start={t('architectureDegreeStart')}
+            end={t('architectureDegreeEnd')}
           ></UniCard>
 
           <UniCard
             imgSrc={IMG3}
-            title={"Ghaem Industrial Higher Education"}
-            desc={"Bachelors Degree, Architectural Technology Engineering"}
-            start={"Sep 2011"}
-            end={"Sep 2013"}
+            title={t('engineeringDegree')}
+            desc={t('engineeringDegreeDesc')}
+            start={t('engineeringDegreeStart')}
+            end={t('engineeringDegreeEnd')}
           ></UniCard>
         </article>
-        {/* END OF UI/UX  */}
+
         <article className="service">
           <div className="service__head">
-            <h3>Professional Certificates</h3>
+            <h3>{t('professionalCertificates')}</h3>
           </div>
 
           <UniCard
             imgSrc={IMG1}
-            title={"Karl-Franzens-Universität Graz"}
-            desc={"Professional Certificate, Project Management"}
-            start={"Jan 2023"}
-            end={"Mar 2023"}
+            title={t('projectManagementCertificate')}
+            desc={t('projectManagementCertificateDesc')}
+            start={t('projectManagementCertificateStart')}
+            end={t('projectManagementCertificateEnd')}
           ></UniCard>
 
           <UniCard
             imgSrc={IMG1}
-            title={"Karl-Franzens-Universität Graz"}
-            desc={"Professional Certificate, Business Management"}
-            start={"Aug 2023"}
-            end={"Nov 2023"}
+            title={t('businessManagementCertificate')}
+            desc={t('businessManagementCertificateDesc')}
+            start={t('businessManagementCertificateStart')}
+            end={t('businessManagementCertificateEnd')}
           ></UniCard>
         </article>
       </div>
       <section id="services" className="services__container-new container">
         <article className="service-new">
           <div className="service__head-new">
-            <h3>PMI Certificates</h3>
+            <h3>{t('pmiCertificates')}</h3>
           </div>
           <div className="triple-items">
             <UniCard
               imgSrc={IMG4}
-              title={"Project Management Skills for Leaders"}
+              title={t('projectManagementSkills')}
+              desc={t('projectManagementSkillsDesc')}
             ></UniCard>
             <UniCard
               imgSrc={IMG4}
-              title={"From Manager to Leader Certificate"}
+              title={t('managerToLeader')}
+              desc={t('managerToLeaderDesc')}
             ></UniCard>
             <UniCard
               imgSrc={IMG4}
-              title={"Project Management Foundations"}
+              title={t('projectManagementFoundations')}
+              desc={t('projectManagementFoundationsDesc')}
             ></UniCard>
           </div>
           <div className="triple-items">
             <UniCard
               imgSrc={IMG4}
-              title={"Project Management Foundations: Risk"}
-            ></UniCard>
-
-            <UniCard
-              imgSrc={IMG4}
-              title={"Project Management Foundations: Ethics"}
+              title={t('pmfRisk')}
+              desc={t('pmfRiskDesc')}
             ></UniCard>
             <UniCard
               imgSrc={IMG4}
-              title={"Project Management Foundations: Teams"}
+              title={t('pmfEthics')}
+              desc={t('pmfEthicsDesc')}
+            ></UniCard>
+            <UniCard
+              imgSrc={IMG4}
+              title={t('pmfTeams')}
+              desc={t('pmfTeamsDesc')}
             ></UniCard>
           </div>
           {ShowMorePMI && (
@@ -121,47 +122,50 @@ const Services = () => {
               <div className="triple-items">
                 <UniCard
                   imgSrc={IMG4}
-                  title={"Project Management Foundations: Budgets"}
-                ></UniCard>
-
-                <UniCard
-                  imgSrc={IMG4}
-                  title={"Project Management Foundations: Schedules"}
+                  title={t('pmfBudgets')}
+                  desc={t('pmfBudgetsDesc')}
                 ></UniCard>
                 <UniCard
                   imgSrc={IMG4}
-                  title={"Project Management Foundations: Requirements"}
+                  title={t('pmfSchedules')}
+                  desc={t('pmfSchedulesDesc')}
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={t('pmfRequirements')}
+                  desc={t('pmfRequirementsDesc')}
                 ></UniCard>
               </div>
               <div className="triple-items">
                 <UniCard
                   imgSrc={IMG4}
-                  title={"Project Management Foundations: Comunication"}
-                ></UniCard>
-
-                <UniCard
-                  imgSrc={IMG4}
-                  title={"Managing Project Stakeholders"}
+                  title={t('pmfComunication')}
+                  desc={t('pmfComunicationDesc')}
                 ></UniCard>
                 <UniCard
                   imgSrc={IMG4}
-                  title={"Developing Your Emotional Intelligence"}
+                  title={t('managingStakeholders')}
+                  desc={t('managingStakeholdersDesc')}
                 ></UniCard>
                 <UniCard
                   imgSrc={IMG4}
-                  title={
-                    "Sustainability in the Company: Implementing Strategies in Practice"
-                  }
+                  title={t('emotionalIntelligence')}
+                  desc={t('emotionalIntelligenceDesc')}
                 ></UniCard>
                 <UniCard
                   imgSrc={IMG4}
-                  title={
-                    "Sustainability in Business: Fundamentals of Sustainable Economic Activity"
-                  }
+                  title={t('sustainabilityCompany')}
+                  desc={t('sustainabilityCompanyDesc')}
                 ></UniCard>
                 <UniCard
                   imgSrc={IMG4}
-                  title={"Sustainability Talks: Tips from Antje von Dewitz"}
+                  title={t('sustainabilityBusiness')}
+                  desc={t('sustainabilityBusinessDesc')}
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={t('sustainabilityTalks')}
+                  desc={t('sustainabilityTalksDesc')}
                 ></UniCard>
               </div>
             </>
@@ -179,7 +183,7 @@ const Services = () => {
                   }, 500);
                 }}
               >
-                {ShowMorePMI ? "Show less" : "Show more"}
+                {ShowMorePMI ? t('showLess') : t('showMore')}
               </Button>
             </div>
           </div>

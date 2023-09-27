@@ -1,40 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
 import AnimationReact from "./AnimationReact";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import HeaderLanguages from "./HeaderLanguages";
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header>
       <div className="container header__container">
-        <motion.h5
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {t('hello')} I'm
-        </motion.h5>
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {t('name')} {/* Use t('name') to get translation */}
-        </motion.h2>
-        <motion.h5
-          className="text-light"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {t('role')} {/* Use t('role') to get translation */}
-        </motion.h5>
+        {isMobile ? (
+          <motion.h2
+            style={{ marginTop: "50px" }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {t('hello')}
+          </motion.h2>
+        ) : (
+          <motion.h2
+            style={{ marginTop: "50px" }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {t('hello')}
+          </motion.h2>
+        )}
 
         <CTA />
         <HeaderSocials />
@@ -48,8 +60,9 @@ const Header = () => {
           >
             <AnimationReact />
           </motion.div>
+          <h2>{t('name')}</h2>
+          <h5 className="text-light">{t('role')}</h5>
         </div>
-        
       </div>
     </header>
   );

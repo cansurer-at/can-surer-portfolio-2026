@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { Button } from "antd";
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 const Experience = () => {
-  const [ShowMoreTools, setShowMoreTools] =
-    useState(false);
-    const [ShowMoreProjectManagement, setShowMoreProjectManagement] =
-    useState(false);
+  const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const [ShowMoreTools, setShowMoreTools] = useState(false);
+  const [ShowMoreProjectManagement, setShowMoreProjectManagement] = useState(false);
   const [loadings, setLoadings] = useState([]);
   const [loadings2, setLoadings2] = useState([]);
 
@@ -45,55 +45,52 @@ const Experience = () => {
 
   return (
     <section id="experience">
-      <h5>What Skills I Have</h5>
-      <h2>My Skills</h2>
+      <h5>{t('skillsHeader')}</h5>
+      <h2>{t('mySkills')}</h2>
 
       <div className="container experience__container">
         <div className="experience__frontend">
-          <h3>Project Management</h3>
+          <h3>{t('projectManagement')}</h3>
           <div className="experience__content">
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Agile Methodologies</h4>
+                <h4>{t('agileMethodologies')}</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Technology Selection</h4>
+                <h4>{t('technologySelection')}</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Project Planning</h4>
+                <h4>{t('projectPlanning')}</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Budget Management </h4>
+                <h4>{t('budgetManagement')}</h4>
               </div>
             </article>
-           
 
             {ShowMoreProjectManagement && (
               <>
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>
-                    Stakeholder Communication</h4>
+                    <h4>{t('stakeholderCommunication')}</h4>
                   </div>
                 </article>
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Quality Assurance</h4>
+                    <h4>{t('qualityAssurance')}</h4>
                   </div>
                 </article>
-              
               </>
             )}
             <div style={{ justifyContent: "center", display: "flex" }}>
@@ -109,66 +106,55 @@ const Experience = () => {
                     }, 500);
                   }}
                 >
-                  {ShowMoreProjectManagement ? "Show less" : "Show more"}
+                  {ShowMoreProjectManagement ? t('showLess') : t('showMore')}
                 </Button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* END OF PROJECT MANAGEMENT */}
-
         <div className="experience__frontend">
-          <h3>Management Tools & Technologies</h3>
+          <h3>{t('managementToolsTechnologies')}</h3>
           <div className="experience__content">
-          
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Asana</h4>
+                <h4>{t('asana')}</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4></h4>
+                <h4>{t('MicrosoftExcel')}</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Jira</h4>
+                <h4>{t('jira')}</h4>
               </div>
             </article>
-
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>Microsoft Project</h4>
+                <h4>{t('microsoftProject')}</h4>
               </div>
             </article>
-           
 
             {ShowMoreTools && (
               <>
-               
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Office 365</h4>
+                    <h4>{t('office365')}</h4>
                   </div>
                 </article>
-               
-
-           
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>SAP</h4>
+                    <h4>{t('sap')}</h4>
                   </div>
                 </article>
-        
-              
               </>
             )}
             <div style={{ justifyContent: "center", display: "flex" }}>
@@ -184,13 +170,12 @@ const Experience = () => {
                     }, 500);
                   }}
                 >
-                  {ShowMoreTools ? "Show less" : "Show more"}
+                  {ShowMoreTools ? t('showLess') : t('showMore')}
                 </Button>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -2,50 +2,46 @@ import React from "react";
 import "./about.css";
 import ME from '../../assets/secondary.png'
 import { FaAward } from "react-icons/fa";
-
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 const About = () => {
+  const { t } = useTranslation(); // Use useTranslation hook to access translations
+
   return (
     <section className="About-general" id="about">
-      <h5 className="getToNowMargin">Get To Know</h5>
-      <h2>About Me</h2>
+      <h5 className="getToNowMargin">{t('getToKnow')}</h5>
+      <h2>{t('aboutMe')}</h2>
 
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={ME} alt="About Me" />
+            <img src={ME} alt={t('aboutMeAltText')} />
           </div>
         </div>
         <div className="about__content">
           <div className="about__cards">
             <article className="about__card">
               <FaAward className="about__icon" />
-              <h5>Experience</h5>
-              <small>5+ Years working </small>
+              <h5>{t('experience')}</h5>
+              <small>{t('experienceYears')}</small>
             </article>
-           
-            
+            {/* Add other cards as needed */}
           </div>
 
           <p>
-          A Project Manager, with a solid technical, design, and IT background (over 5 years of experience in project
-environment, as both project manager and assistant). 
-            <br></br>
-            <br></br>
-            <span></span>
-            <span></span>Adept at handling multiple projects simultaneously with the
-highest degree of accuracy. Proficient with the major CAD software systems and adobe suite.
-            <br></br>
-            <br></br>
-            <span></span>
-            <span></span>Passionate about
-functional programming, content management, and content creation. Equipped with excellent visual presentation
-           <div></div>
+            {t('projectManagerIntro')}
+            <br />
+            <br />
+            {t('projectManagerSkills')}
+            <br />
+            <br />
+            {t('projectManagerPassion')}
+            <div></div>
           </p>
           <div className="lets-talk">
-          <a href="#contact" className="btn btn-primary">
-            Let's Talk
-          </a>
+            <a href="#contact" className="btn btn-primary">
+              {t('letsTalkBtn')}
+            </a>
           </div>
         </div>
       </div>
