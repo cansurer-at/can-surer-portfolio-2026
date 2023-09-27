@@ -16,27 +16,23 @@ const Footer = () => {
       </a>
 
       <ul className="permalinks">
-        <li>
+        <p>
           <a href="#">{t("home")}</a>
-        </li>
-        <li>
+        </p>
+        <p>
           <a href="#about">{t("about")}</a>
-        </li>
-        <li>
+        </p>
+        <p>
           <a href="#experience">{t("experience")}</a>
-        </li>
-        <li>
+        </p>
+        <p>
           <a href="#services">{t("services")}</a>
-        </li>
-        <li>
-          <a href="#portfolio">{t("portfolio")}</a>
-        </li>
-        <li>
-          <a href="#testimonials">{t("testimonials")}</a>
-        </li>
-        <li>
+        </p>
+        
+      
+        <p>
           <a href="#contact">{t("contact")}</a>
-        </li>
+        </p>
       </ul>
 
       <div className="footer__socialss">

@@ -30,7 +30,6 @@ const Header = () => {
       <div className="container header__container">
         {isMobile ? (
           <motion.h2
-            style={{ marginTop: "50px" }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -39,7 +38,6 @@ const Header = () => {
           </motion.h2>
         ) : (
           <motion.h2
-            style={{ marginTop: "50px" }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
