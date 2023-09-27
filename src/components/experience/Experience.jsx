@@ -55,79 +55,45 @@ const Experience = () => {
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>HTML</h4>
+                <h4>Agile Methodologies</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>CSS</h4>
+                <h4>Technology Selection</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>JavaScript</h4>
+                <h4>Project Planning</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>React</h4>
+                <h4>Budget Management </h4>
               </div>
             </article>
-            <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
-              <div>
-                <h4>TypeScript</h4>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
-              <div>
-                <h4>Next JS</h4>
-              </div>
-            </article>
+           
 
             {ShowMoreProjectManagement && (
               <>
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Tailwind CSS</h4>
+                    <h4>
+                    Stakeholder Communication</h4>
                   </div>
                 </article>
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Bootstrap</h4>
+                    <h4>Quality Assurance</h4>
                   </div>
                 </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Material UI</h4>
-                  </div>
-                </article>
-
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Cypress</h4>
-                  </div>
-                </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Jest</h4>
-                  </div>
-                </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Ant Design</h4>
-                  </div>
-                </article>
+              
               </>
             )}
             <div style={{ justifyContent: "center", display: "flex" }}>
@@ -155,82 +121,54 @@ const Experience = () => {
         <div className="experience__frontend">
           <h3>Management Tools & Technologies</h3>
           <div className="experience__content">
+          
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>HTML</h4>
+                <h4>Asana</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>CSS</h4>
+                <h4>Trello</h4>
               </div>
             </article>
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>JavaScript</h4>
+                <h4>Jira</h4>
               </div>
             </article>
+
             <article className="experience__details">
               <BsPatchCheckFill className="experience__details-icon" />
               <div>
-                <h4>React</h4>
+                <h4>Microsoft Project</h4>
               </div>
             </article>
-            <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
-              <div>
-                <h4>TypeScript</h4>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
-              <div>
-                <h4>Next JS</h4>
-              </div>
-            </article>
+           
 
             {ShowMoreTools && (
               <>
+               
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Tailwind CSS</h4>
+                    <h4>Office 365</h4>
                   </div>
                 </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Bootstrap</h4>
-                  </div>
-                </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Material UI</h4>
-                  </div>
-                </article>
+               
 
+           
                 <article className="experience__details">
                   <BsPatchCheckFill className="experience__details-icon" />
                   <div>
-                    <h4>Cypress</h4>
+                    <h4>SAP</h4>
                   </div>
                 </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Jest</h4>
-                  </div>
-                </article>
-                <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
-                  <div>
-                    <h4>Ant Design</h4>
-                  </div>
-                </article>
+        
+              
               </>
             )}
             <div style={{ justifyContent: "center", display: "flex" }}>
