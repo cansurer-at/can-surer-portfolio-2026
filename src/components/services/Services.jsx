@@ -82,92 +82,109 @@ const Services = () => {
           ></UniCard>
         </article>
       </div>
-     <section 
-     id="services"className="services__container-new">
-     <article className="service-new">
-        <div className="service__head-new">
-          <h3>PMI Certificates</h3>
-        </div>
-        <div className="triple-items">
-          <UniCard
-            imgSrc={IMG4}
-            title={"Project Management Skills for Leaders"}
-          ></UniCard>
-          <UniCard imgSrc={IMG4} title={"From Manager to Leader Certificate"}></UniCard>
-          <UniCard
-            imgSrc={IMG4}
-            title={"Project Management Foundations"}
-          ></UniCard>
-        </div>
-        <div className="triple-items">
-          <UniCard
-            imgSrc={IMG4}
-            title={"Project Management Foundations: Risk"}
-          ></UniCard>
-
-          <UniCard
-            imgSrc={IMG4}
-            title={"Project Management Foundations: Ethics"}
-          ></UniCard>
-          <UniCard
-            imgSrc={IMG4}
-            title={"Project Management Foundations: Teams"}
-          ></UniCard>
-        </div>
-        {ShowMorePMI && (
-          <>
-            {" "}
-            <div className="triple-items">
-              <UniCard
-                imgSrc={IMG4}
-                title={"Project Management Foundations: Budgets"}
-              ></UniCard>
-
-              <UniCard
-                imgSrc={IMG4}
-                title={"Project Management Foundations: Schedules"}
-              ></UniCard>
-              <UniCard
-                imgSrc={IMG4}
-                title={"Project Management Foundations: Requirements"}
-              ></UniCard>
-            </div>
-            <div className="triple-items">
-              <UniCard
-                imgSrc={IMG4}
-                title={"Project Management Foundations: Comunication"}
-              ></UniCard>
-
-              <UniCard
-                imgSrc={IMG4}
-                title={"Managing Project Stakeholders"}
-              ></UniCard>
-              <UniCard
-                imgSrc={IMG4}
-                title={"Developing Your Emotional Intelligence"}
-              ></UniCard>
-            </div>
-          </>
-        )}
-        <div style={{ justifyContent: "center", display: "flex" }}>
-          <div style={{ marginBottom: "20px" }} className="button-container">
-            <Button
-              className=".ant-btn-primary"
-              type="primary"
-              loading={loadings[0]}
-              onClick={() => {
-                enterLoading(0);
-                setTimeout(() => {
-                  setShowMorePMI(!ShowMorePMI);
-                }, 500);
-              }}
-            >
-              {ShowMorePMI ? "Show less" : "Show more"}
-            </Button>
+      <section id="services" className="services__container-new container">
+        <article className="service-new">
+          <div className="service__head-new">
+            <h3>PMI Certificates</h3>
           </div>
-        </div>
-      </article>
-     </section>
+          <div className="triple-items">
+            <UniCard
+              imgSrc={IMG4}
+              title={"Project Management Skills for Leaders"}
+            ></UniCard>
+            <UniCard
+              imgSrc={IMG4}
+              title={"From Manager to Leader Certificate"}
+            ></UniCard>
+            <UniCard
+              imgSrc={IMG4}
+              title={"Project Management Foundations"}
+            ></UniCard>
+          </div>
+          <div className="triple-items">
+            <UniCard
+              imgSrc={IMG4}
+              title={"Project Management Foundations: Risk"}
+            ></UniCard>
+
+            <UniCard
+              imgSrc={IMG4}
+              title={"Project Management Foundations: Ethics"}
+            ></UniCard>
+            <UniCard
+              imgSrc={IMG4}
+              title={"Project Management Foundations: Teams"}
+            ></UniCard>
+          </div>
+          {ShowMorePMI && (
+            <>
+              <div className="triple-items">
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Project Management Foundations: Budgets"}
+                ></UniCard>
+
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Project Management Foundations: Schedules"}
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Project Management Foundations: Requirements"}
+                ></UniCard>
+              </div>
+              <div className="triple-items">
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Project Management Foundations: Comunication"}
+                ></UniCard>
+
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Managing Project Stakeholders"}
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Developing Your Emotional Intelligence"}
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={
+                    "Sustainability in the Company: Implementing Strategies in Practice"
+                  }
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={
+                    "Sustainability in Business: Fundamentals of Sustainable Economic Activity"
+                  }
+                ></UniCard>
+                <UniCard
+                  imgSrc={IMG4}
+                  title={"Sustainability Talks: Tips from Antje von Dewitz"}
+                ></UniCard>
+              </div>
+            </>
+          )}
+          <div style={{ justifyContent: "center", display: "flex" }}>
+            <div style={{ marginBottom: "20px" }} className="button-container">
+              <Button
+                className=".ant-btn-primary"
+                type="primary"
+                loading={loadings[0]}
+                onClick={() => {
+                  enterLoading(0);
+                  setTimeout(() => {
+                    setShowMorePMI(!ShowMorePMI);
+                  }, 500);
+                }}
+              >
+                {ShowMorePMI ? "Show less" : "Show more"}
+              </Button>
+            </div>
+          </div>
+        </article>
+      </section>
     </section>
   );
 };

@@ -4,17 +4,18 @@
   gap: 15%;
 }
 
-.About-general{
-margin-top:22rem
+.About-general {
+  margin-top: 22rem
 }
+
 .about__me {
   width: 100%;
-  aspect-ratio: 1/1;
   border-radius: 2rem;
   background: linear-gradient(45deg, transparent, var(--color-primary));
-  display: grid;
   place-items: center;
-  
+  height: max-content;
+
+
 }
 
 .about__me-image {
@@ -62,6 +63,7 @@ margin-top:22rem
 .about__card h5 {
   font-size: 0.95rem;
 }
+
 .about__card small {
   font-size: 0.7rem;
   color: var(--color-light);
@@ -78,6 +80,7 @@ margin-top:22rem
     grid-template-columns: 1fr;
     gap: 0;
   }
+
   .about__me {
     width: 50%;
     margin: 2rem auto 4rem;
@@ -87,6 +90,7 @@ margin-top:22rem
     margin: 1rem 0 1.5rem;
   }
 }
+
 .about__cards {
   display: flex;
   flex-direction: center;
@@ -101,18 +105,19 @@ margin-top:22rem
 
 /*====== MEDIA QUERIES (SMALL DEVİCES) */
 @media screen and (max-width: 600px) {
-  
+
 
   .getToNowMargin {
     margin-top: -10rem;
   }
+
   .about__me {
     width: 65%;
     margin: -1rem auto 3rem;
   }
 
   .about__cards {
-  display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
@@ -120,35 +125,33 @@ margin-top:22rem
   .about__content {
     text-align: center;
   }
+
   .about__content p {
     margin: 1.5rem 0;
   }
 }
 
 
-@media screen and (min-height: 667px) { 
+@media screen and (min-height: 667px) {
   .getToNowMargin {
     margin-top: -10rem;
   }
 
-  
+
 }
 
-@media screen and (min-height: 815px) { 
+@media screen and (min-height: 815px) {
   .getToNowMargin {
     margin-top: -22rem;
   }
-  
+
 
 }
 
-@media screen and (min-height: 1020px) { 
+@media screen and (min-height: 1020px) {
   .getToNowMargin {
     margin-top: 0rem;
   }
-  
+
 
 }
-
-
-
