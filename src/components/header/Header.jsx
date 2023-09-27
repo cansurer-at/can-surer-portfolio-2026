@@ -4,6 +4,7 @@ import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
 import AnimationReact from "./AnimationReact";
 import { motion } from "framer-motion"
+import HeaderLanguages from "./HeaderLanguages";
 
 
 const Header = () => {
@@ -36,6 +37,7 @@ const Header = () => {
 
         <CTA />
         <HeaderSocials />
+        <HeaderLanguages />
 
         <div className="me">
 

@@ -2,7 +2,6 @@ import React from "react";
 import { BsLinkedin } from "react-icons/bs";
 
 
-import { AiOutlineYoutube } from "react-icons/ai";
 
 const HeaderSocials = () => {
   return (
