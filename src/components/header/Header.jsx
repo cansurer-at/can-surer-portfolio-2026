@@ -24,7 +24,7 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          Seyedafshin Ghiasi
+          Afshin Ghiasi
         </motion.h2>
         <motion.h5
           className="text-light"

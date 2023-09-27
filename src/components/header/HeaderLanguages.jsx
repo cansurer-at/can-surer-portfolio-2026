@@ -20,7 +20,7 @@ const HeaderSocials = () => {
       <button onClick={() => changeLanguage('de')} className={i18n.language === 'de' ? 'active' : ''}>
         DE
       </button>
-      <p>{t('greeting')}</p>
+     
     </div>
   );
 };
