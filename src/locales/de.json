@@ -1,3 +1,8 @@
 {
-  "greeting": "Hallo, Welt!"
+  "hello": "Hallo,",
+  "name": "Afshin Ghiasi",
+  "role": "Projektmanager",
+  "scrollDown": "Nach unten scrollen",
+  "downloadCV": "Lebenslauf herunterladen",
+  "LetsTalkBtn": "Lass uns sprechen"
 }

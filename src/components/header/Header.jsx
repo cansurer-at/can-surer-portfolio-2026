@@ -5,26 +5,27 @@ import HeaderSocials from "./HeaderSocials";
 import AnimationReact from "./AnimationReact";
 import { motion } from "framer-motion"
 import HeaderLanguages from "./HeaderLanguages";
-
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+  const { t } = useTranslation(); // Use useTranslation hook to access translations
+
   return (
     <header>
-
       <div className="container header__container">
         <motion.h5
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          Hello I'm
+          {t('hello')} I'm
         </motion.h5>
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          Afshin Ghiasi
+          {t('name')} {/* Use t('name') to get translation */}
         </motion.h2>
         <motion.h5
           className="text-light"
@@ -32,7 +33,7 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          Product Manager
+          {t('role')} {/* Use t('role') to get translation */}
         </motion.h5>
 
         <CTA />
@@ -40,7 +41,6 @@ const Header = () => {
         <HeaderLanguages />
 
         <div className="me">
-
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -49,9 +49,7 @@ const Header = () => {
             <AnimationReact />
           </motion.div>
         </div>
-        <a href="#contact" className="scroll__down">
-          Scroll Down
-        </a>
+        
       </div>
     </header>
   );
