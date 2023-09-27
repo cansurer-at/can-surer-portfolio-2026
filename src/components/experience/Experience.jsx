@@ -53,25 +53,28 @@ const Experience = () => {
           <h3>{t('projectManagement')}</h3>
           <div className="experience__content">
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill  width={20} height={20} className="experience__details-icon" />
               <div>
                 <h4>{t('agileMethodologies')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill  width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('technologySelection')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('projectPlanning')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('budgetManagement')}</h4>
               </div>
@@ -80,7 +83,9 @@ const Experience = () => {
             {ShowMoreProjectManagement && (
               <>
                 <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
+                  <BsPatchCheckFill 
+                  width={20} height={20}
+                  className="experience__details-icon" />
                   <div>
                     <h4>{t('stakeholderCommunication')}</h4>
                   </div>
@@ -117,25 +122,34 @@ const Experience = () => {
           <h3>{t('managementToolsTechnologies')}</h3>
           <div className="experience__content">
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill 
+              width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('asana')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill 
+              
+              width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('MicrosoftExcel')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill 
+              width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('jira')}</h4>
               </div>
             </article>
             <article className="experience__details">
-              <BsPatchCheckFill className="experience__details-icon" />
+              <BsPatchCheckFill 
+              width={20} height={20}
+              className="experience__details-icon" />
               <div>
                 <h4>{t('microsoftProject')}</h4>
               </div>
@@ -144,13 +158,18 @@ const Experience = () => {
             {ShowMoreTools && (
               <>
                 <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
+                  <BsPatchCheckFill
+                  width={20} height={20}
+                   className="experience__details-icon" />
                   <div>
                     <h4>{t('office365')}</h4>
                   </div>
                 </article>
                 <article className="experience__details">
-                  <BsPatchCheckFill className="experience__details-icon" />
+                  <BsPatchCheckFill 
+                  
+                  width={20} height={20}
+                  className="experience__details-icon" />
                   <div>
                     <h4>{t('sap')}</h4>
                   </div>

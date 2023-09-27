@@ -85,6 +85,20 @@
   font-size: 0.9rem;
 }
 
+.card-title {
+  font-size: 20px;
+}
+
+.card-desc {
+  font-size: 15px;
+}
+
+.card-date-start {
+  font-size: 15px;
+}
+.card-date-end {
+  font-size: 15px;
+}
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
   .services__container {
@@ -146,6 +160,21 @@
   .triple-items{
     display: grid;
     padding: 0 10px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+  
+  .card-desc {
+    font-size: 9px;
+  }
+  
+  .card-date-start {
+    font-size: 9px;
+  }
+  .card-date-end {
+    font-size: 9px;
   }
 
   

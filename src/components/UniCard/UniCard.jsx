@@ -10,11 +10,11 @@ const UniCard = ({ imgSrc, title, desc, start, end }) => {
           <img width={110} height={110} src={imgSrc} className="image-itself" alt="logo" />
         </div>
         <div className="text-wrapper">
-          <h2>{title}</h2>
-          <h4>{desc}</h4>
+          <p className="card-title">{title}</p>
+          <p className="card-desc">{desc}</p>
           <div className="date-wrapper">
-          <h4>{start}&nbsp;&nbsp;&nbsp;</h4>
-          <h4>{end}</h4>
+          <p className="card-date-start">{start}&nbsp;&nbsp;&nbsp;</p>
+          <p className="card-date-end">{end}</p>
         </div>
         </div>
        
