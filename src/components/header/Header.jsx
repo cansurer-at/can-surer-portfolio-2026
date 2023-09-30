@@ -46,7 +46,6 @@ const Header = () => {
           </motion.h2>
         )}
 
-        <CTA />
         <HeaderSocials />
         <HeaderLanguages />
 
@@ -57,8 +56,11 @@ const Header = () => {
             transition={{ duration: 2 }}
           >
             <AnimationReact />
+        <CTA />
+
           </motion.div>
-          <h2>{t('name')}</h2>
+
+          <h2 style={{"marginTop":"50px"}}>{t('name')}</h2>
           <h5 className="text-light">{t('role')}</h5>
         </div>
       </div>

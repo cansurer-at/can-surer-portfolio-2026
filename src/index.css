@@ -107,6 +107,9 @@ a:hover {
   border: 1px solid var(--color-primary);
   transition: var(--transition);
 }
+button {
+  color: #000;
+}
 
 .btn2 {
   width: max-content;
