@@ -99,12 +99,28 @@ header {
 
 
 /*====== MEDIA QUERIES (MEDIUM DEVİCES */
-@media screen and (max-width: 1024px) {
- header {
-   height: 68vh;
- }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    height: 68vh;
+  }
 
+  .header__container {
+    margin-top: 150px;
+
+  }
+
+  .text-name{
+    font-size: 33px;
+  }
+  .text-light{
+    font-size: 18px;
+  }
+
+  .slogan-title {
+    font-size: 30px;
+  }
 }
+
 
 /*====== MEDIA QUERIES (SMALL DEVİCES) */
 @media screen and (max-width: 600px) {

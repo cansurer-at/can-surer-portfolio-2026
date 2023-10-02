@@ -32,6 +32,7 @@ const Header = () => {
 
           <div style={{ paddingTop: "70px" }} >
           <motion.h2 
+          className="slogan-title"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -41,6 +42,7 @@ const Header = () => {
           </div>
         ) : (
           <motion.h2
+             className="slogan-title"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -62,7 +64,7 @@ const Header = () => {
               <CTA />
             </motion.div>
 
-            <h2 style={{ marginTop: "50px" }}>{t("name")}</h2>
+            <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
             <h5 className="text-light">{t("role")}</h5>
           </div>
         </div>
