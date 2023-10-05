@@ -81,16 +81,6 @@ header {
 
 }
 
-@media screen and (min-height: 1020px) { 
-  .me {
-  }
-
-}
-@media screen and (max-height: 1200px) { 
-  .me {
-  }
-
-}
 
 
 
@@ -179,3 +169,21 @@ header {
 
 }
 
+
+/*====== MEDIA QUERIES (BIG MONITORS) */
+@media screen and (min-width: 1300px) and (max-width: 2600px) {
+  .header__container {
+    margin-top: 150px;
+
+  }
+  .text-name{
+    font-size: 34px;
+  }
+  .text-light{
+    font-size: 22px;
+  }
+
+  .slogan-title {
+    font-size: 38px;
+  }
+}
