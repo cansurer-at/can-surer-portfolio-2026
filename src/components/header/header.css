@@ -30,8 +30,6 @@ header {
   left: 0;
   top: 1rem;
 
-
-
 }
 
 .language-buttons button {
@@ -42,18 +40,15 @@ header {
   cursor: pointer;
   border-radius: 10px;
   border: 2px solid black;
+  z-index: 1000 !important;
 
 }
-
-
-
-
-
 .language-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
+
   position: absolute;
   right: 0;
   top: 40px;
@@ -67,11 +62,6 @@ header {
 
 
 
-
-.header__socialss::after {
-
-  background: var(--color-primary);
-}
 
 
 
@@ -134,14 +124,11 @@ header {
     font-size: 15px;
     cursor: pointer;
     border-radius: 10px;
+
   
   }
   
-  .language-buttons button:hover {
-    height: 60px;
-    width: 60px;
-   
-  }
+ 
   
   
   
@@ -160,11 +147,7 @@ header {
   }
   
   
-  .language-buttons::after {
-  
-    background: var(--color-primary);
-  }
-  
+
   
 
 }

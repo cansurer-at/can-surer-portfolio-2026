@@ -14,10 +14,10 @@ const HeaderSocials = () => {
 
   return (
     <div className="language-buttons">
-      <button onClick={() => changeLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>
+      <button onClick={() => changeLanguage('en')}>
         EN
       </button>
-      <button onClick={() => changeLanguage('de')} className={i18n.language === 'de' ? 'active' : ''}>
+      <button onClick={() => changeLanguage('de')} >
         DE
       </button>
      
