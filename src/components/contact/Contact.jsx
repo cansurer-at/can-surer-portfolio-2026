@@ -19,7 +19,7 @@ const Contact = () => {
             <h5>{t("emailAddress")}</h5>
             <a
               target="_top"
-              href="mailto:afshinghiasi@yahoo.com"
+              href="mailto:cansurer@outlook.com"
               rel="noreferrer"
             >
               {t("sendMessage")}

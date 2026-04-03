@@ -8,7 +8,7 @@ const HeaderSocials = () => {
     <div className="header__socialss">
       <a
         className="social-btn"
-        href="https://www.linkedin.com/in/afshin-ghiasi/"
+        href="https://www.linkedin.com/in/cansurer/"
         rel="noreferrer"
         target="_blank"
       >

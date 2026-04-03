@@ -37,7 +37,8 @@ const Header = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            {t("hello")}
+            <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
+            <h5 className="text-light">{t("role")}</h5>
           </motion.h2>
           </div>
         ) : (
@@ -47,7 +48,8 @@ const Header = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            {t("hello")}
+           <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
+            <h5 className="text-light">{t("role")}</h5>
           </motion.h2>
         )}
 
@@ -64,8 +66,7 @@ const Header = () => {
               <CTA />
             </motion.div>
 
-            <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
-            <h5 className="text-light">{t("role")}</h5>
+          
           </div>
         </div>
       </div>

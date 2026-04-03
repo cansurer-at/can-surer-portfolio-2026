@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-import CV_EN from '../../assets/Afshin_Portfolio-EN.pdf'; // English CV
-import CV_DE from '../../assets/Afshin_Portfolio-DE.pdf'; // German CV
+import CV_EN from '../../assets/Can-Surer-CV-EN.pdf';
+import CV_DE from '../../assets/Can-Surer-CV-DE.pdf';
 
 const CTA = () => {
   const { t, i18n } = useTranslation();
@@ -13,7 +13,7 @@ const CTA = () => {
 
   return (
     <motion.div
-    style={{"marginTop":"-70px"}}
+    style={{"marginTop":"170px"}}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
