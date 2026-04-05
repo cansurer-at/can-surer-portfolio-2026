@@ -41,7 +41,8 @@ const Services = () => {
 
   return (
     <section id="services">
-      <h2 className="timeline__title">{t("workExperience")}</h2>
+      <h5>{t("experience")}</h5>
+      <h2>{t("workExperience")}</h2>
 
       <div className="timeline">
         {jobs.map((job, index) => (

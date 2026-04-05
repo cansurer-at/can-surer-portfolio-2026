@@ -1,70 +1,70 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./nav.css";
+import { useTranslation } from "react-i18next";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
-import { BiMessageSquareDetail, BiCommentDetail } from "react-icons/bi";
-import { useState } from "react";
+import { BiCommentDetail, BiMessageSquareDetail } from "react-icons/bi";
+
+const navItems = [
+  { id: "top", icon: AiOutlineHome, labelKey: "home" },
+  { id: "about", icon: AiOutlineUser, labelKey: "about" },
+  { id: "experience", icon: BiBook, labelKey: "skills" },
+  { id: "services", icon: RiServiceLine, labelKey: "services" },
+  { id: "testimonials", icon: BiCommentDetail, labelKey: "testimonials" },
+  { id: "contact", icon: BiMessageSquareDetail, labelKey: "contact" },
+];
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("");
+  const { t } = useTranslation();
+  const [activeSection, setActiveSection] = useState("top");
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setActiveNav("#");
+  useEffect(() => {
+    const sections = navItems
+      .filter((item) => item.id !== "top")
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNav = (id) => {
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("top");
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <nav role="navigation" aria-label="Main navigation">
-      <button
-        onClick={scrollToTop}
-        className={activeNav === "#" ? "active" : ""}
-        aria-label="Home"
-        style={{ background: "none", cursor: "pointer", border: "none" }}
-      >
-        <AiOutlineHome />
-      </button>
-      <a
-        href="#about"
-        onClick={() => setActiveNav("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-        aria-label="About"
-      >
-        <AiOutlineUser />
-      </a>
-      <a
-        href="#experience"
-        onClick={() => setActiveNav("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
-        aria-label="Skills"
-      >
-        <BiBook />
-      </a>
-      <a
-        href="#services"
-        onClick={() => setActiveNav("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-        aria-label="Work Experience"
-      >
-        <RiServiceLine />
-      </a>
-      <a
-        href="#testimonials"
-        onClick={() => setActiveNav("#testimonials")}
-        className={activeNav === "#testimonials" ? "active" : ""}
-        aria-label="Testimonials"
-      >
-        <BiCommentDetail />
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-        aria-label="Contact"
-      >
-        <BiMessageSquareDetail />
-      </a>
+      {navItems.map(({ id, icon: Icon, labelKey }) => (
+        <button
+          key={id}
+          onClick={() => handleNav(id)}
+          className={activeSection === id ? "active" : ""}
+          aria-label={t(labelKey)}
+          aria-current={activeSection === id ? "page" : undefined}
+        >
+          <Icon aria-hidden="true" />
+          <span className="nav__label">{t(labelKey)}</span>
+        </button>
+      ))}
     </nav>
   );
 };

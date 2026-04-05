@@ -45,7 +45,6 @@ const About = () => {
       <h2>{t("aboutMe")}</h2>
 
       <div className="about__container">
-        {/* Tech Stack Grid */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,17 +53,11 @@ const About = () => {
           style={{
             borderRadius: "20px",
             padding: "clamp(1.2rem, 3vw, 2rem)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            background: "rgba(255,255,255,0.03)",
+            border: "1px solid var(--color-border)",
+            background: "var(--color-surface)",
           }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "clamp(0.6rem, 1.5vw, 1rem)",
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "clamp(0.6rem, 1.5vw, 1rem)" }}>
             {techStack.map((tech, i) => {
               const Icon = tech.icon;
               return (
@@ -76,25 +69,14 @@ const About = () => {
                   viewport={{ once: true }}
                   whileHover={{ y: -4, scale: 1.05 }}
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    padding: "clamp(0.8rem, 2vw, 1.2rem)",
-                    borderRadius: "14px",
-                    background: "rgba(255,255,255,0.04)",
-                    cursor: "default",
-                    transition: "all 300ms ease",
+                    display: "flex", flexDirection: "column", alignItems: "center",
+                    gap: "0.5rem", padding: "clamp(0.8rem, 2vw, 1.2rem)",
+                    borderRadius: "14px", background: "rgba(255,255,255,0.03)",
+                    cursor: "default", transition: "all 300ms ease",
                   }}
                 >
                   <Icon size={26} color={tech.color} />
-                  <span
-                    style={{
-                      fontSize: "0.72rem",
-                      fontWeight: 500,
-                      color: "rgba(255,255,255,0.5)",
-                    }}
-                  >
+                  <span style={{ fontSize: "0.72rem", fontWeight: 500, color: "var(--color-text-muted)" }}>
                     {tech.name}
                   </span>
                 </motion.div>
@@ -103,7 +85,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Right: Stats + Text */}
         <motion.div
           className="about__content"
           initial={{ opacity: 0, y: 40 }}
@@ -111,66 +92,33 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           viewport={{ once: true }}
         >
-          {/* Stats Cards */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "clamp(0.6rem, 1.5vw, 1rem)",
-              marginBottom: "2rem",
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "clamp(0.6rem, 1.5vw, 1rem)", marginBottom: "2rem" }}>
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
                 <div
                   key={i}
                   style={{
-                    borderRadius: "16px",
-                    padding: "clamp(1rem, 2vw, 1.5rem)",
-                    textAlign: "center",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    background: "rgba(255,255,255,0.03)",
-                    transition: "all 300ms ease",
+                    borderRadius: "16px", padding: "clamp(1rem, 2vw, 1.5rem)",
+                    textAlign: "center", border: "1px solid var(--color-border)",
+                    background: "var(--color-surface)", transition: "all 300ms ease",
                   }}
                 >
-                  <Icon
-                    style={{
-                      color: "rgba(255,255,255,0.8)",
-                      fontSize: "1.2rem",
-                      marginBottom: "0.5rem",
-                    }}
-                  />
-                  <h5
-                    style={{
-                      color: "white",
-                      fontSize: "0.85rem",
-                      fontWeight: 600,
-                      marginBottom: "0.2rem",
-                    }}
-                  >
+                  <Icon style={{ color: "var(--color-accent-light)", fontSize: "1.2rem", marginBottom: "0.5rem" }} />
+                  <h5 style={{ color: "white", fontSize: "0.85rem", fontWeight: 600, marginBottom: "0.2rem" }}>
                     {stat.title}
                   </h5>
-                  <small
-                    style={{
-                      color: "rgba(255,255,255,0.4)",
-                      fontSize: "0.72rem",
-                    }}
-                  >
+                  <small style={{ color: "var(--color-text-muted)", fontSize: "0.72rem" }}>
                     {stat.sub}
                   </small>
                 </div>
               );
             })}
           </div>
-
           <p>{t("aboutIntro")}</p>
           <p>{t("aboutSpecialization")}</p>
-
           <div className="lets-talk">
-            <a href="#contact" className="btn btn-primary">
-              {t("letsTalkBtn")}
-            </a>
+            <a href="#contact" className="btn btn-primary">{t("letsTalkBtn")}</a>
           </div>
         </motion.div>
       </div>

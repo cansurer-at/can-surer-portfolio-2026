@@ -1,11 +1,10 @@
 header {
   min-height: 100vh;
-  padding-top: 0;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .header__container {
@@ -34,12 +33,12 @@ header {
 }
 
 .header__socialss a {
-  opacity: 0.4;
-  transition: all 300ms ease;
+  color: var(--color-text-muted);
+  transition: var(--transition);
 }
 
 .header__socialss a:hover {
-  opacity: 1;
+  color: var(--color-accent-light);
   transform: scale(1.1);
 }
 
@@ -63,21 +62,17 @@ header {
   font-family: "Inter", sans-serif;
   cursor: pointer;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
   backdrop-filter: blur(10px);
-  transition: all 300ms ease;
+  transition: var(--transition);
 }
 
 .language-buttons button:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.me {
-  margin-top: 0;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-light);
+  border-color: var(--color-accent-border);
 }
 
 .hero-badge {
@@ -86,12 +81,11 @@ header {
   gap: 0.5rem;
   padding: 0.5rem 1.2rem;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-secondary);
   margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
 }
 
 .hero-badge .dot {
@@ -107,49 +101,25 @@ header {
   letter-spacing: -0.04em;
   line-height: 1.05;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
 }
 
 .hero-role {
   font-size: 1.3rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .hero-name {
-    font-size: 3.5rem;
-  }
-  .hero-role {
-    font-size: 1.1rem;
-  }
+@media screen and (max-width: 1024px) {
+  .hero-name { font-size: 3.5rem; }
+  .hero-role { font-size: 1.1rem; }
 }
 
 @media screen and (max-width: 600px) {
-  header {
-    min-height: 100vh;
-  }
-  .header__socialss {
-    display: none;
-  }
-  .hero-name {
-    font-size: 2.8rem;
-  }
-  .hero-role {
-    font-size: 1rem;
-  }
-  .language-buttons {
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-  .cta {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
+  .header__socialss { display: none; }
+  .hero-name { font-size: 2.8rem; }
+  .hero-role { font-size: 1rem; }
+  .language-buttons { top: 1.5rem; right: 1.5rem; }
+  .cta { flex-direction: column; align-items: center; gap: 0.8rem; }
 }

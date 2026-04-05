@@ -11,7 +11,7 @@
 }
 
 .about__content p {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
@@ -22,30 +22,14 @@
   margin-top: 2rem;
 }
 
-/* Medium */
 @media screen and (max-width: 1024px) {
-  .About-general {
-    margin-top: 6rem;
-  }
-  .about__container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 0 1rem;
-  }
+  .About-general { margin-top: 6rem; }
+  .about__container { grid-template-columns: 1fr; gap: 3rem; padding: 0 1rem; }
 }
 
-/* Small */
 @media screen and (max-width: 600px) {
-  .About-general {
-    margin-top: 4rem;
-  }
-  .about__container {
-    gap: 2rem;
-  }
-  .about__content {
-    text-align: center;
-  }
-  .lets-talk {
-    justify-content: center;
-  }
+  .About-general { margin-top: 4rem; }
+  .about__container { gap: 2rem; }
+  .about__content { text-align: center; }
+  .lets-talk { justify-content: center; }
 }

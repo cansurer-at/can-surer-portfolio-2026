@@ -1,6 +1,6 @@
 footer {
   background: transparent;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
   padding: 3rem 0;
   text-align: center;
   font-size: 0.85rem;
@@ -8,24 +8,24 @@ footer {
 }
 
 footer a {
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 300ms ease;
+  color: var(--color-text-muted);
+  transition: var(--transition);
 }
 
 footer a:hover {
-  color: white;
+  color: var(--color-accent-light);
 }
 
 .footer__logo {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   display: inline-block;
-  color: rgba(255, 255, 255, 0.4);
-  transition: all 300ms ease;
+  color: var(--color-text-muted);
+  transition: var(--transition);
 }
 
 .footer__logo:hover {
-  color: white;
+  color: var(--color-accent-light);
 }
 
 .permalinks {
@@ -36,9 +36,17 @@ footer a:hover {
   margin: 0 auto 2.5rem;
 }
 
-.permalinks a {
+.permalinks a,
+.permalinks button {
   font-size: 0.85rem;
   font-weight: 500;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.permalinks a:hover,
+.permalinks button:hover {
+  color: var(--color-accent-light);
 }
 
 .footer__socialss {
@@ -49,24 +57,24 @@ footer a:hover {
 }
 
 .footer__socialss a {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted);
   padding: 0.7rem;
   border-radius: 10px;
   display: flex;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
-  transition: all 300ms ease;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition: var(--transition);
 }
 
 .footer__socialss a:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-light);
+  border-color: var(--color-accent-border);
 }
 
 .footer__copyright {
   margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-muted);
   font-size: 0.8rem;
 }
 

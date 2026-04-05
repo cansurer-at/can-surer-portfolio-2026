@@ -8,12 +8,6 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      initial: "h",
-      name: t("himmelbergName"),
-      link: "https://himmelberg.co.uk/",
-      text: t("himmelbergText"),
-    },
-    {
       initial: "A",
       name: t("avicaTestimonialName"),
       link: "https://www.avica.cloud/",
