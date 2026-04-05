@@ -9,8 +9,10 @@ const Services = () => {
   const jobs = [
     {
       role: t("avicaRole"),
-      company: t("avicaCompany"),
+      company: t("avicaCompanyName"),
+      sub: t("avicaCompanySub"),
       period: t("avicaPeriod"),
+      location: t("avicaLocation"),
       bullets: [
         t("avicaBullet1"),
         t("avicaBullet2"),
@@ -21,110 +23,57 @@ const Services = () => {
     },
     {
       role: t("sisalRole"),
-      company: t("sisalCompany"),
+      company: t("sisalCompanyName"),
+      sub: t("sisalCompanySub"),
       period: t("sisalPeriod"),
+      location: t("sisalLocation"),
       bullets: [t("sisalBullet1"), t("sisalBullet2"), t("sisalBullet3")],
     },
     {
       role: t("tpRole"),
-      company: t("tpCompany"),
+      company: t("tpCompanyName"),
+      sub: t("tpCompanySub"),
       period: t("tpPeriod"),
+      location: t("tpLocation"),
       bullets: [t("tpBullet1"), t("tpBullet2"), t("tpBullet3")],
     },
   ];
 
   return (
     <section id="services">
-      <h5>{t("getToKnow")}</h5>
-      <h2>{t("workExperience")}</h2>
+      <h2 className="timeline__title">{t("workExperience")}</h2>
 
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 1rem" }}>
+      <div className="timeline">
         {jobs.map((job, index) => (
           <motion.div
             key={index}
+            className="timeline__item"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.12 }}
             viewport={{ once: true }}
-            style={{
-              borderRadius: "20px",
-              border: "1px solid rgba(255,255,255,0.08)",
-              background: "rgba(255,255,255,0.03)",
-              marginBottom: "1.5rem",
-              padding: "clamp(1.5rem, 3vw, 2.5rem)",
-              transition: "all 300ms ease",
-            }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-between",
-                alignItems: "flex-start",
-                gap: "0.5rem",
-                marginBottom: "1.2rem",
-              }}
-            >
-              <div>
-                <h3
-                  style={{
-                    color: "white",
-                    fontSize: "clamp(1rem, 2vw, 1.15rem)",
-                    fontWeight: 600,
-                    margin: 0,
-                    lineHeight: 1.4,
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {job.role}
-                </h3>
-                <span
-                  style={{
-                    color: "rgba(255,255,255,0.4)",
-                    fontSize: "0.85rem",
-                  }}
-                >
-                  {job.company}
-                </span>
+            <div className="timeline__dot" />
+            <div className="timeline__card">
+              <div className="timeline__header">
+                <div>
+                  <h3 className="timeline__company">{job.company}</h3>
+                  {job.sub && (
+                    <p className="timeline__sub">{job.sub}</p>
+                  )}
+                  <p className="timeline__role">{job.role}</p>
+                </div>
+                <div className="timeline__meta">
+                  <span className="timeline__period">{job.period}</span>
+                  <span className="timeline__location">{job.location}</span>
+                </div>
               </div>
-              <span
-                style={{
-                  color: "rgba(255,255,255,0.3)",
-                  fontSize: "0.8rem",
-                  fontWeight: 500,
-                  whiteSpace: "nowrap",
-                  marginTop: "4px",
-                }}
-              >
-                {job.period}
-              </span>
+              <ul className="timeline__bullets">
+                {job.bullets.map((bullet, i) => (
+                  <li key={i}>{bullet}</li>
+                ))}
+              </ul>
             </div>
-            <ul style={{ padding: 0, margin: 0 }}>
-              {job.bullets.map((bullet, i) => (
-                <li
-                  key={i}
-                  style={{
-                    display: "flex",
-                    gap: "0.75rem",
-                    marginBottom: "0.6rem",
-                    color: "rgba(255,255,255,0.6)",
-                    fontSize: "clamp(0.82rem, 1.5vw, 0.9rem)",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  <span
-                    style={{
-                      color: "rgba(255,255,255,0.2)",
-                      marginTop: "2px",
-                      flexShrink: 0,
-                    }}
-                  >
-                    ▸
-                  </span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
           </motion.div>
         ))}
       </div>

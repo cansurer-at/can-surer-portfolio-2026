@@ -4,7 +4,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
-import { BiMessageSquareDetail } from "react-icons/bi";
+import { BiMessageSquareDetail, BiCommentDetail } from "react-icons/bi";
 import { useState } from "react";
 
 const Nav = () => {
@@ -48,6 +48,14 @@ const Nav = () => {
         aria-label="Work Experience"
       >
         <RiServiceLine />
+      </a>
+      <a
+        href="#testimonials"
+        onClick={() => setActiveNav("#testimonials")}
+        className={activeNav === "#testimonials" ? "active" : ""}
+        aria-label="Testimonials"
+      >
+        <BiCommentDetail />
       </a>
       <a
         href="#contact"
