@@ -10,7 +10,7 @@ const changeLanguage = (lng) => {
 };
 
 const HeaderSocials = () => {
-  const { t } = useTranslation(); // Use useTranslation hook
+  useTranslation();
 
   return (
     <div className="language-buttons">

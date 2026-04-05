@@ -1,38 +1,56 @@
 import React from "react";
 import "./footer.css";
 import { BsLinkedin } from "react-icons/bs";
-import { BsFillArrowUpSquareFill } from "react-icons/bs";
-// import { AiOutlineYoutube } from "react-icons/ai";
-import { useTranslation } from "react-i18next"; // Import useTranslation from react-i18next
+import { BsArrowUp } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer>
-      <a href="#" className="footer__logo" rel="noreferrer">
-        <BsFillArrowUpSquareFill />
-      </a>
+      <button
+        onClick={scrollToTop}
+        className="footer__logo"
+        aria-label="Scroll to top"
+        style={{ background: "none", cursor: "pointer" }}
+      >
+        <BsArrowUp />
+      </button>
 
       <ul className="permalinks">
-        <p>
-          <a href="#">{t("home")}</a>
-        </p>
-        <p>
+        <li>
+          <button
+            onClick={scrollToTop}
+            style={{
+              background: "none",
+              cursor: "pointer",
+              color: "inherit",
+              font: "inherit",
+              fontSize: "0.85rem",
+              fontWeight: 500,
+            }}
+          >
+            {t("home")}
+          </button>
+        </li>
+        <li>
           <a href="#about">{t("about")}</a>
-        </p>
-        <p>
-          <a href="#experience">{t("experience")}</a>
-        </p>
-        <p>
+        </li>
+        <li>
+          <a href="#experience">{t("skills")}</a>
+        </li>
+        <li>
           <a href="#services">{t("services")}</a>
-        </p>
-        
-      
-        <p>
+        </li>
+        <li>
           <a href="#contact">{t("contact")}</a>
-        </p>
+        </li>
       </ul>
 
       <div className="footer__socialss">
@@ -40,17 +58,10 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
           href="https://www.linkedin.com/in/cansurer/"
+          aria-label="LinkedIn profile"
         >
           <BsLinkedin />
         </a>
-
-        {/* <a
-          href="https://www.youtube.com/@mesomeric2584"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <AiOutlineYoutube />
-        </a> */}
       </div>
 
       <div className="footer__copyright">

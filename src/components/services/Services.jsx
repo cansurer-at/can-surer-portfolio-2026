@@ -1,194 +1,133 @@
-import React, { useState } from "react";
-import { Button } from "antd";
+import React from "react";
 import "./services.css";
-import UniCard from "../UniCard/UniCard";
-import IMG1 from "../../assets/uni-graz.png";
-import IMG2 from "../../assets/uni-mir.jpeg";
-import IMG3 from "../../assets/logo-ghatem.png";
-import IMG4 from "../../assets/PMI-logo.png";
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
-  const [ShowMorePMI, setShowMorePMI] = useState(false);
-  const [loadings, setLoadings] = useState([]);
+  const { t } = useTranslation();
 
-  const enterLoading = (index) => {
-    setLoadings((prevLoadings) => {
-      const newLoadings = [...prevLoadings];
-      newLoadings[index] = true;
-      return newLoadings;
-    });
-
-    setTimeout(() => {
-      setLoadings((prevLoadings) => {
-        const newLoadings = [...prevLoadings];
-        newLoadings[index] = false;
-        return newLoadings;
-      });
-    }, 500);
-  };
+  const jobs = [
+    {
+      role: t("avicaRole"),
+      company: t("avicaCompany"),
+      period: t("avicaPeriod"),
+      bullets: [
+        t("avicaBullet1"),
+        t("avicaBullet2"),
+        t("avicaBullet3"),
+        t("avicaBullet4"),
+        t("avicaBullet5"),
+      ],
+    },
+    {
+      role: t("sisalRole"),
+      company: t("sisalCompany"),
+      period: t("sisalPeriod"),
+      bullets: [t("sisalBullet1"), t("sisalBullet2"), t("sisalBullet3")],
+    },
+    {
+      role: t("tpRole"),
+      company: t("tpCompany"),
+      period: t("tpPeriod"),
+      bullets: [t("tpBullet1"), t("tpBullet2"), t("tpBullet3")],
+    },
+  ];
 
   return (
     <section id="services">
-      <h5>{t('getToKnow')}</h5>
-      <h2>{t('educationBackground')}</h2>
+      <h5>{t("getToKnow")}</h5>
+      <h2>{t("workExperience")}</h2>
 
-      <div className="container services__container">
-        <article className="service">
-          <div className="service__head">
-            <h3>{t('education')}</h3>
-          </div>
-          <UniCard
-            imgSrc={IMG2}
-            title={t('architectureDegree')}
-            desc={t('architectureDegreeDesc')}
-            start={t('architectureDegreeStart')}
-            end={t('architectureDegreeEnd')}
-          ></UniCard>
-
-          <UniCard
-            imgSrc={IMG3}
-            title={t('engineeringDegree')}
-            desc={t('engineeringDegreeDesc')}
-            start={t('engineeringDegreeStart')}
-            end={t('engineeringDegreeEnd')}
-          ></UniCard>
-        </article>
-
-        <article className="service">
-          <div className="service__head">
-            <h3>{t('professionalCertificates')}</h3>
-          </div>
-
-          <UniCard
-            imgSrc={IMG1}
-            title={t('projectManagementCertificate')}
-            desc={t('projectManagementCertificateDesc')}
-            start={t('projectManagementCertificateStart')}
-            end={t('projectManagementCertificateEnd')}
-          ></UniCard>
-
-          <UniCard
-            imgSrc={IMG1}
-            title={t('businessManagementCertificate')}
-            desc={t('businessManagementCertificateDesc')}
-            start={t('businessManagementCertificateStart')}
-            end={t('businessManagementCertificateEnd')}
-          ></UniCard>
-        </article>
-      </div>
-      <section id="services" className="services__container-new container">
-        <article className="service-new">
-          <div className="service__head-new">
-            <h3>{t('pmiCertificates')}</h3>
-          </div>
-          <div className="triple-items">
-            <UniCard
-              imgSrc={IMG4}
-              title={t('projectManagementSkills')}
-              desc={t('projectManagementSkillsDesc')}
-            ></UniCard>
-            <UniCard
-              imgSrc={IMG4}
-              title={t('managerToLeader')}
-              desc={t('managerToLeaderDesc')}
-            ></UniCard>
-            <UniCard
-              imgSrc={IMG4}
-              title={t('projectManagementFoundations')}
-              desc={t('projectManagementFoundationsDesc')}
-            ></UniCard>
-          </div>
-          <div className="triple-items">
-            <UniCard
-              imgSrc={IMG4}
-              title={t('pmfRisk')}
-              desc={t('pmfRiskDesc')}
-            ></UniCard>
-            <UniCard
-              imgSrc={IMG4}
-              title={t('pmfEthics')}
-              desc={t('pmfEthicsDesc')}
-            ></UniCard>
-            <UniCard
-              imgSrc={IMG4}
-              title={t('pmfTeams')}
-              desc={t('pmfTeamsDesc')}
-            ></UniCard>
-          </div>
-          {ShowMorePMI && (
-            <>
-              <div className="triple-items">
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('pmfBudgets')}
-                  desc={t('pmfBudgetsDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('pmfSchedules')}
-                  desc={t('pmfSchedulesDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('pmfRequirements')}
-                  desc={t('pmfRequirementsDesc')}
-                ></UniCard>
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 1rem" }}>
+        {jobs.map((job, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            style={{
+              borderRadius: "20px",
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.03)",
+              marginBottom: "1.5rem",
+              padding: "clamp(1.5rem, 3vw, 2.5rem)",
+              transition: "all 300ms ease",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "0.5rem",
+                marginBottom: "1.2rem",
+              }}
+            >
+              <div>
+                <h3
+                  style={{
+                    color: "white",
+                    fontSize: "clamp(1rem, 2vw, 1.15rem)",
+                    fontWeight: 600,
+                    margin: 0,
+                    lineHeight: 1.4,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {job.role}
+                </h3>
+                <span
+                  style={{
+                    color: "rgba(255,255,255,0.4)",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {job.company}
+                </span>
               </div>
-              <div className="triple-items">
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('pmfComunication')}
-                  desc={t('pmfComunicationDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('managingStakeholders')}
-                  desc={t('managingStakeholdersDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('emotionalIntelligence')}
-                  desc={t('emotionalIntelligenceDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('sustainabilityCompany')}
-                  desc={t('sustainabilityCompanyDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('sustainabilityBusiness')}
-                  desc={t('sustainabilityBusinessDesc')}
-                ></UniCard>
-                <UniCard
-                  imgSrc={IMG4}
-                  title={t('sustainabilityTalks')}
-                  desc={t('sustainabilityTalksDesc')}
-                ></UniCard>
-              </div>
-            </>
-          )}
-          <div style={{ justifyContent: "center", display: "flex" }}>
-            <div style={{ marginBottom: "20px" }} className="button-container">
-              <Button
-                className=".ant-btn-primary"
-                type="primary"
-                loading={loadings[0]}
-                onClick={() => {
-                  enterLoading(0);
-                  setTimeout(() => {
-                    setShowMorePMI(!ShowMorePMI);
-                  }, 500);
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.3)",
+                  fontSize: "0.8rem",
+                  fontWeight: 500,
+                  whiteSpace: "nowrap",
+                  marginTop: "4px",
                 }}
               >
-                {ShowMorePMI ? t('showLess') : t('showMore')}
-              </Button>
+                {job.period}
+              </span>
             </div>
-          </div>
-        </article>
-      </section>
+            <ul style={{ padding: 0, margin: 0 }}>
+              {job.bullets.map((bullet, i) => (
+                <li
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: "0.75rem",
+                    marginBottom: "0.6rem",
+                    color: "rgba(255,255,255,0.6)",
+                    fontSize: "clamp(0.82rem, 1.5vw, 0.9rem)",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "rgba(255,255,255,0.2)",
+                      marginTop: "2px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    ▸
+                  </span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };

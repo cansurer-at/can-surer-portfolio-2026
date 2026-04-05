@@ -1,20 +1,31 @@
 footer {
-  background: var(--color-primary);
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 3rem 0;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 7rem;
+  font-size: 0.85rem;
+  margin-top: 8rem;
 }
 
 footer a {
-  color: var(--color-bg);
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 300ms ease;
+}
+
+footer a:hover {
+  color: white;
 }
 
 .footer__logo {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
   display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 300ms ease;
+}
+
+.footer__logo:hover {
+  color: white;
 }
 
 .permalinks {
@@ -22,44 +33,46 @@ footer a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2.5rem;
+}
+
+.permalinks a {
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .footer__socialss {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer__socialss a {
-  background: var(--color-bg);
-  color: var(--color-white);
-  padding: 0.8rem;
-  border-radius: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.7rem;
+  border-radius: 10px;
   display: flex;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 300ms ease;
 }
 
 .footer__socialss a:hover {
-  background: transparent;
-  color: var(--color-bg);
-  border-color: var(--color-bg);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .footer__copyright {
-  margin-bottom: 4rem;
-  color: var(--color-bg);
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
 }
 
-/* ================ MEDIA QUERIES (SMALL DEVICES) ================= */
 @media screen and (max-width: 600px) {
   .permalinks {
     flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .footer__socialss {
-    margin-bottom: 2.6rem;
+    gap: 1rem;
   }
 }

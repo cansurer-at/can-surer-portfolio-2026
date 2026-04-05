@@ -1,74 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./header.css";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
-import AnimationReact from "./AnimationReact";
-import { motion } from "framer-motion";
 import HeaderLanguages from "./HeaderLanguages";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 600);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { t } = useTranslation();
 
   return (
     <header>
-      <div className="container header__container">
-        {isMobile ? (
-
-          <div style={{ paddingTop: "70px" }} >
-          <motion.h2 
-          className="slogan-title"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
-            <h5 className="text-light">{t("role")}</h5>
-          </motion.h2>
+      <div className="header__container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <div className="hero-badge">
+            <span className="dot" />
+            <span>{t("availableForWork")}</span>
           </div>
-        ) : (
-          <motion.h2
-             className="slogan-title"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-          >
-           <h2 className="text-name" style={{ marginTop: "50px" }}>{t("name")}</h2>
-            <h5 className="text-light">{t("role")}</h5>
-          </motion.h2>
-        )}
+        </motion.div>
+
+        <motion.h1
+          className="hero-name"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          {t("name")}
+        </motion.h1>
+
+        <motion.p
+          className="hero-role"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          {t("role")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <CTA />
+        </motion.div>
 
         <HeaderSocials />
         <HeaderLanguages />
-        <div style={{ marginTop: "50px" }}>
-          <div className="me">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 2 }}
-            >
-              <AnimationReact />
-              <CTA />
-            </motion.div>
-
-          
-          </div>
-        </div>
       </div>
     </header>
   );

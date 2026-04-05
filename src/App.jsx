@@ -11,7 +11,6 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Services from "./components/services/Services";
 import { Analytics } from "@vercel/analytics/react"
-import { motion } from "framer-motion"
 
 import enTranslation from './locales/en.json';
 import deTranslation from './locales/de.json';

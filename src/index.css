@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -11,15 +11,18 @@
 }
 
 :root {
-  --color-bg: black;
-  --color-bg-variant: grey;
-  --color-primary: #fff;
-  --color-primary-variant: silver;
+  --color-bg: #000000;
+  --color-bg-variant: rgba(255, 255, 255, 0.06);
+  --color-primary: #ffffff;
+  --color-primary-variant: rgba(255, 255, 255, 0.15);
   --color-white: #fff;
-  --color-light: #ffffffd0;
-
-  --transition: all 400ms ease;
-
+  --color-light: rgba(255, 255, 255, 0.6);
+  --color-muted: rgba(255, 255, 255, 0.4);
+  --gradient-text: linear-gradient(135deg, #ffffff 0%, #a8b4c4 100%);
+  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-sm: 90%;
@@ -34,44 +37,63 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--color-bg);
   color: var(--color-white);
   line-height: 1.7;
-  background-image: url(../src/assets/bg-texture.png);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============== GENEARL STYLES ============== */
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 500;
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+h2 {
   font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 section {
-  margin-top: 8rem;
+  margin-top: 10rem;
+  padding: 0 1rem;
 }
 
 section > h2,
 section > h5 {
   text-align: center;
-  color: var(--color-light);
+}
+
+section > h5 {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
 }
 
 section > h2 {
   color: var(--color-primary);
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-light {
@@ -84,83 +106,43 @@ a {
 }
 
 a:hover {
-  color: silver;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .btn {
   width: max-content;
   display: inline-block;
   color: var(--color-primary);
-  padding: 0.75rem 1.2rem;
-  border-radius: 0.4rem;
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
   cursor: pointer;
-  border: 1px solid var(--color-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  background: transparent;
 }
 
-.btn-forantd {
-  width: max-content;
-  display: inline-block;
-  color: var(--color-primary);
-  border-radius: 0.4rem;
-  cursor: pointer;
-  border: 1px solid var(--color-primary);
-  transition: var(--transition);
-}
-button {
-  color: #000;
-}
-
-.btn2 {
-  width: max-content;
-  display: inline-block;
-  color: var(--color-primary);
-  padding: 0.75rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  border: 1px solid var(--color-primary);
-  transition: var(--transition);
-}
 .btn:hover {
-  background: var(--color-white) ;
-  color: var(--color-bg);
-  border-color: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
-
-.btn-antd:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
-  border-color: transparent;
-}
-
-.btn2:focus {
-  background: var(--color-white);
-  color: var(--color-bg);
-  border-color: transparent;
-}
-
-.btn2:active {
-  background: var(--color-white);
-  color: var(--color-bg);
-  border-color: transparent;
-}
-
-
 
 .btn-primary {
-  background: var(--color-primary);
+  background: var(--color-white);
   color: var(--color-bg);
+  border-color: transparent;
 }
 
-.btn-primary2 {
-  background: var(--color-primary);
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
   color: var(--color-bg);
+  border-color: transparent;
+  transform: translateY(-1px);
 }
-.btn-forantd-primary {
-  background: var(--color-primary);
-  color: var(--color-bg);
-}
-
 
 img {
   display: block;
@@ -168,24 +150,27 @@ img {
   object-fit: cover;
 }
 
-/* ================ MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
   }
-
   section {
-    margin-top: 6rem;
+    margin-top: 7rem;
   }
 }
 
-/* ================ MEDIA QUERIES (SMALL DEVICES) ================= */
 @media screen and (max-width: 600px) {
   .container {
     width: var(--container-width-sm);
   }
-
   section > h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
   }
 }
+
+@tailwind components;
+@tailwind utilities;
