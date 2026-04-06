@@ -26,6 +26,7 @@ const Services = () => {
       role: t("sisalRole"),
       company: t("sisalCompanyName"),
       companyUrl: "https://www.sisal.it/",
+      subUrl: "https://www.flutter.com/",
       sub: t("sisalCompanySub"),
       period: t("sisalPeriod"),
       location: t("sisalLocation"),
@@ -69,7 +70,13 @@ const Services = () => {
                     ) : job.company}
                   </h3>
                   {job.sub && (
-                    <p className="timeline__sub">{job.sub}</p>
+                    <p className="timeline__sub">
+                      {job.subUrl ? (
+                        <a href={job.subUrl} target="_blank" rel="noreferrer" className="timeline__company-link">
+                          {job.sub}
+                        </a>
+                      ) : job.sub}
+                    </p>
                   )}
                   <p className="timeline__role">{job.role}</p>
                 </div>
