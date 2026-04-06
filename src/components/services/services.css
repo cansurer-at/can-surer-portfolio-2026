@@ -53,7 +53,6 @@
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.2rem;
-  flex-wrap: wrap;
 }
 
 .timeline__company {
@@ -62,6 +61,17 @@
   font-weight: 600;
   margin: 0 0 0.15rem 0;
   letter-spacing: -0.01em;
+}
+
+.timeline__company-link {
+  color: var(--color-accent-light);
+  transition: var(--transition);
+}
+
+.timeline__company-link:hover {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .timeline__sub {
@@ -83,7 +93,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.3rem;
+  gap: 0.4rem;
   flex-shrink: 0;
 }
 
@@ -102,6 +112,8 @@
 .timeline__location {
   color: var(--color-text-muted);
   font-size: 0.78rem;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .timeline__bullets {
@@ -143,6 +155,24 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .timeline__header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .timeline__meta {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .timeline__location {
+    white-space: nowrap;
+    text-align: left;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .timeline {
     padding-left: 1.5rem;
@@ -152,13 +182,5 @@
   }
   .timeline__item {
     padding-left: 1.5rem;
-  }
-  .timeline__header {
-    flex-direction: column;
-  }
-  .timeline__meta {
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 0.8rem;
   }
 }

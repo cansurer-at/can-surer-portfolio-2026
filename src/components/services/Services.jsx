@@ -10,6 +10,7 @@ const Services = () => {
     {
       role: t("avicaRole"),
       company: t("avicaCompanyName"),
+      companyUrl: "https://www.avica.cloud/",
       sub: t("avicaCompanySub"),
       period: t("avicaPeriod"),
       location: t("avicaLocation"),
@@ -24,6 +25,7 @@ const Services = () => {
     {
       role: t("sisalRole"),
       company: t("sisalCompanyName"),
+      companyUrl: "https://www.sisal.it/",
       sub: t("sisalCompanySub"),
       period: t("sisalPeriod"),
       location: t("sisalLocation"),
@@ -32,6 +34,7 @@ const Services = () => {
     {
       role: t("tpRole"),
       company: t("tpCompanyName"),
+      companyUrl: "https://www.teleperformance.com/",
       sub: t("tpCompanySub"),
       period: t("tpPeriod"),
       location: t("tpLocation"),
@@ -58,7 +61,13 @@ const Services = () => {
             <div className="timeline__card">
               <div className="timeline__header">
                 <div>
-                  <h3 className="timeline__company">{job.company}</h3>
+                  <h3 className="timeline__company">
+                    {job.companyUrl ? (
+                      <a href={job.companyUrl} target="_blank" rel="noreferrer" className="timeline__company-link">
+                        {job.company}
+                      </a>
+                    ) : job.company}
+                  </h3>
                   {job.sub && (
                     <p className="timeline__sub">{job.sub}</p>
                   )}
@@ -66,9 +75,11 @@ const Services = () => {
                 </div>
                 <div className="timeline__meta">
                   <span className="timeline__period">{job.period}</span>
-                  <span className="timeline__location">{job.location}</span>
                 </div>
               </div>
+              {job.location && (
+                <p className="timeline__location" style={{ marginBottom: "0.8rem" }}>{job.location}</p>
+              )}
               <ul className="timeline__bullets">
                 {job.bullets.map((bullet, i) => (
                   <li key={i}>{bullet}</li>

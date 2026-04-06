@@ -47,7 +47,7 @@ const Testimonials = () => {
           setDirection(1);
           return (c + 1) % testimonials.length;
         });
-      }, 5000);
+      }, 7000);
     }, 1000);
 
     return () => {
@@ -65,9 +65,9 @@ const Testimonials = () => {
   const item = testimonials[current];
 
   const variants = {
-    enter: (dir) => ({ x: dir > 0 ? "60%" : "-60%", opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? "-60%" : "60%", opacity: 0 }),
+    enter: { opacity: 0, y: 16 },
+    center: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -16 },
   };
 
   return (
@@ -81,12 +81,11 @@ const Testimonials = () => {
             <motion.article
               key={current}
               className="testimonial__card"
-              custom={direction}
               variants={variants}
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
             >
               <div className="testimonial__avatar">
                 {item.isAvica ? (
